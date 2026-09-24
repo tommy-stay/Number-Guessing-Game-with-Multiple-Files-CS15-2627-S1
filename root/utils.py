@@ -16,14 +16,13 @@ def check_user_guess(secret_number):
    if guess == secret_number:
        print("Correct!")
        print(f"You guessed the number {secret_number}")
-       print(f"Here is your final score: {score}")
        return True
    elif guess < secret_number:
        print("Too low!")
-       score.lose_points
+       score.lose_points()
    else:
        print("Too high!")
-       score.lose_points
+       score.lose_points()
    return False
 
 
@@ -54,20 +53,4 @@ number_to_print = generate_secret_number()
 
 for i in range(3):
    check_user_guess(number_to_print)
-
-
-
-
-
-score = 100
-
-
-def lose_points():
-   global score
-score -= 10
-
-
-def final_score():
-   global score
-print(f"Your final score is: {score}")
 

@@ -1,5 +1,6 @@
 import utils
 
+
 secret_number = utils.generate_secret_number()
 
 while True:

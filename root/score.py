@@ -1,5 +1,7 @@
-score = 100
+current_score = 100
+new_score = current_score - 10
+
 
 def lose_points():
-    global score
-score -= 10
+    print(new_score)
+    return new_score
