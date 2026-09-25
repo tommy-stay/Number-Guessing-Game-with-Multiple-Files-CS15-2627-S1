@@ -1,6 +1,4 @@
 import random
-import score
-
 
 MAX = 100
 MIN = 1
@@ -12,17 +10,14 @@ def generate_secret_number():
 
 def check_user_guess(secret_number):
    guess = prompt_valid_guess()
-   global score
    if guess == secret_number:
        print("Correct!")
        print(f"You guessed the number {secret_number}")
        return True
    elif guess < secret_number:
        print("Too low!")
-       score.lose_points()
    else:
        print("Too high!")
-       score.lose_points()
    return False
 
 
@@ -47,10 +42,10 @@ def prompt_valid_guess():
            continue
        return guess
 
+if __name__ == "__main__":
+    number_to_print = generate_secret_number()
 
-number_to_print = generate_secret_number()
 
-
-for i in range(3):
-   check_user_guess(number_to_print)
+    for i in range(3):
+        check_user_guess(number_to_print)
 
